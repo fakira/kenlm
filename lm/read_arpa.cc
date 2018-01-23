@@ -136,13 +136,15 @@ void ReadEnd(util::FilePiece &in) {
     line = in.ReadLine();
   } while (IsEntirelyWhiteSpace(line));
   if (line != "\\end\\") UTIL_THROW(FormatLoadException, "Expected \\end\\ but the ARPA file has " << line);
-
+	
+  /*
   try {
     while (true) {
       line = in.ReadLine();
       if (!IsEntirelyWhiteSpace(line)) UTIL_THROW(FormatLoadException, "Trailing line " << line);
     }
   } catch (const util::EndOfFileException &e) {}
+  */
 }
 
 void PositiveProbWarn::Warn(float prob) {
